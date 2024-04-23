@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
+import { Navbar } from '../components/navbar/Navbar'
 
 const Layout = () => {
 
@@ -11,15 +12,7 @@ const Layout = () => {
 
   return (
     <>
-    <nav>
-        <ul>
-            {links.map((link, index)=>{
-            return( 
-            <li>
-            <NavLink to={link.link} key={index}>{link.name}</NavLink>
-            </li>)
-        })}</ul>
-    </nav>
+      <Navbar links={links}/>
       <Outlet/>
       <footer></footer>
     </>
